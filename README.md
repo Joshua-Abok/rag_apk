@@ -55,3 +55,6 @@ rag_apk/
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
