@@ -1,0 +1,26 @@
+# Python Bytecode
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Env Files
+.env          
+!.env.example 
+
+# Chroma Persisted Directory
+doc_emb/
+
+
+# Logs or cache
+*.log
+.cache/
