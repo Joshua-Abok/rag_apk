@@ -25,6 +25,7 @@ rag_apk/
 ├── LICENSE                   
 ├── README.md                       # This file
 └── requirements.txt                # Python dependencies
+└── Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg   # Screenshot_example_usage
 ```
 ## Prerequisites
 * Python 3.10+
@@ -56,7 +57,7 @@ rag_apk/
    OPENAI_API_KEY=your_openai_api_key_here
    ```
 # Usage Examples 
-![Image Logo](ChatGPT_Image_v2_resized.jpg)
+![Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg](Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
