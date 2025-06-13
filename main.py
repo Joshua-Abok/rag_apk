@@ -5,6 +5,9 @@ from langchain_community.vectorstores import Chroma
 from langchain.chat_models import ChatOpenAI
 from langchain.chains import RetrievalQA
 
+from langchain.agents import initialize_agent, Tool, AgentType
+from langchain.chains.summarize import load_summarize_chain
+
 from document_loader import *   
 from dotenv import load_dotenv
 
@@ -13,12 +16,22 @@ load_dotenv()
 chat = ChatOpenAI() 
 embeddings = OpenAIEmbeddings()
 
+summarizer = load_summarize_chain(chat, chain_type="map_reduce")
+
 text_splitter = CharacterTextSplitter(
     separator="\n", 
-    chunk_size=200, 
-    chunk_overlap=0
+    chunk_size=100, 
+    chunk_overlap=5
 )
 
+
+# helper to return raw text of top-k docs 
+def retrieve_for_agent(query: str) -> str: 
+    docs = retriever.get_relevant_documents(query)
+    summary = summarizer.run(docs)
+    # return "\n\n".join(d.page_content for d in docs)
+    return summary[:2000]
+    
 
 try: 
 
@@ -39,18 +52,29 @@ try:
         persist_directory="doc_emb"
     )
 
-    # wrapping into a retriever & QA chain
-    retriever = db.as_retriever(search_kwargs={"k": 2})
+    # # wrapping into a retriever & QA chain
+    retriever = db.as_retriever(search_kwargs={"k": 1})
 
-    qa = RetrievalQA.from_chain_type(
-        llm=chat, 
-        chain_type="stuff", 
-        retriever=retriever, 
-        return_source_documents=False
+    tool = Tool(
+        name="Retriever", 
+        func=retrieve_for_agent, 
+        description=(
+        "Returns a short summary (≤2000 chars) of the most relevant "
+        "publications to answer the question."
+    ),
     )
 
-    query = "What is ai agent?"
-    answer = qa.run(query)
+    agent = initialize_agent(
+        tools=[tool], 
+        llm=chat, 
+        agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, 
+        verbose=True, # displays actions/observation
+        handle_parsing_errors=True
+    )
+
+
+    query = "What is VAE?"
+    answer = agent.run(query)
 
     print("---\nAnswer:\n", answer)
     
