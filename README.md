@@ -55,6 +55,8 @@ rag_apk/
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
+# Usage Examples 
+![Image Logo](ChatGPT_Image_v2_resized.jpg)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
