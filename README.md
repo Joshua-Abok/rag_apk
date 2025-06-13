@@ -15,6 +15,7 @@ This repository provides a simple, extensible Retrieval-Augmented Generation (RA
 
 ## Repository Structure
 ```
+rag_apk/
 ├── document_loader.py              # Core DocumentLoader implementation
 ├── main.py                         # Core llm & vector db implementation
 ├── project_1_publications.json     # Sample JSON data
