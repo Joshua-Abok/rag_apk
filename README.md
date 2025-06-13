@@ -19,7 +19,9 @@ This repository provides a simple, extensible Retrieval-Augmented Generation (RA
 ├── main.py                         # Core llm & vector db implementation
 ├── project_1_publications.json     # Sample JSON data
 ├── doc_emb/                        # Persisted Chroma embeddings directory
-├── .env.template                   # Environment variables template                      
+├── .env.template                   # Environment variables template
+├── .gitignore
+├── LICENSE                   
 ├── README.md                       # This file
 └── requirements.txt                # Python dependencies
 ```
