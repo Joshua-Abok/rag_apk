@@ -16,16 +16,20 @@ This repository provides a simple, extensible Retrieval-Augmented Generation (RA
 ## Repository Structure
 ```
 rag_apk/
-├── document_loader.py              # Core DocumentLoader implementation
-├── main.py                         # Core llm & vector db implementation
-├── project_1_publications.json     # Sample JSON data
-├── doc_emb/                        # Persisted Chroma embeddings directory
-├── .env.template                   # Environment variables template
-├── .gitignore
-├── LICENSE                   
-├── README.md                       # This file
-└── requirements.txt                # Python dependencies
-└── Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg   # Screenshot_example_usage
+├── app/                            
+│   └── main.py
+├── loaders/                        
+│   └── document_loader.py
+├── agents/                      
+│   └── agent.py
+├── data/                         
+│   └── project_1_publications.json
+├── embeddings/                     
+│   └── doc_emb/
+├── .env
+├── requirements.txt
+├── README.md
+
 ```
 ## Prerequisites
 * Python 3.10+
