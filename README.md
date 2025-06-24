@@ -81,7 +81,7 @@ You can now interact with the Ready Tensor Publication Explorer!
 
 
 # Usage Examples 
-![Usage Example](image.png)
+![Usage Example](usage_example.png)
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
