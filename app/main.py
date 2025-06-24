@@ -1,4 +1,7 @@
+import sys
+import os
 import streamlit as st
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from langchain_community.embeddings import OpenAIEmbeddings
 from langchain_openai import ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
@@ -26,7 +29,7 @@ if "agent" not in st.session_state:
     try:
         # Load and split docs
         loader = DocumentLoader(
-            file_path="./project_1_publications.json",
+            file_path="./data/project_1_publications.json",
             jq_schema='.[] | {title: .title, body: .publication_description}',
             text_content=False
         )

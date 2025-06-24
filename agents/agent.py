@@ -1,6 +1,6 @@
 from langchain.chains.summarize import load_summarize_chain
 from langchain.agents import initialize_agent, Tool, AgentType
-from langchain.vectorstores import Chroma
+from langchain_community.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseLanguageModel
