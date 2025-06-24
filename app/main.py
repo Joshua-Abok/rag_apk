@@ -24,8 +24,10 @@ chat = ChatOpenAI()
 embeddings = OpenAIEmbeddings()
 
 
-st.set_page_config(page_title="RAG Chat", page_icon="🧠")
-st.title("📚 Ready Tensor RAG Chat")
+#st.set_page_config(page_title="RAG Chat", page_icon="🧠")
+st.set_page_config(page_title="Ready Tensor Publication Explorer", page_icon="🧠")
+#st.title("📚 Ready Tensor RAG Chat")
+st.title("📚 RAG-Based Ready Tensor Publication Explorer")
 st.caption("Ask questions about the Ready Tensor publications.")
 
 
@@ -36,7 +38,8 @@ if "agent" not in st.session_state:
     try:
         # Load and split docs
         loader = DocumentLoader(
-            file_path="./data/project_1_publications.json",
+            #file_path="./data/project_1_publications.json",
+            file_path=f"{DATA_DIR}/project_1_publications.json",
             jq_schema='.[] | {title: .title, body: .publication_description}',
             text_content=False
         )

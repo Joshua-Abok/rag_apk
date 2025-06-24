@@ -1,5 +1,7 @@
 from typing import Any 
 import os 
+from typeguard import typechecked 
+
 
 from langchain.document_loaders import (
     JSONLoader, PyPDFLoader
@@ -7,6 +9,7 @@ from langchain.document_loaders import (
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.schema import Document
 
+@typechecked  # <-- Enclose the function with typeguard
 def _select_loader_class(file_path: str): 
     '''Return the appropriate loader class for the given file extension.'''
     ext = os.path.splitext(file_path)[1].lower()
@@ -24,6 +27,7 @@ class DocumentLoaderException(Exception):
 class DocumentLoader: 
     '''document loader for .json and .pdf sources'''
 
+    @typechecked  # <-- Enclose the constructor with typeguard
     def __init__(self, file_path: str, **kwargs: Any):
         self.file_path = file_path
         self.kwargs = kwargs 
@@ -31,10 +35,12 @@ class DocumentLoader:
         # self.loader = self._select_loader()
         self.loader = LoaderClass(file_path=file_path, **kwargs)
 
+    @typechecked  # <-- Enclose the constructor with typeguard
     def load(self) -> list[Document]: 
         '''load raw documents'''
         return self.loader.load()
     
+    @typechecked  # <-- Enclose the method with typeguard
     def load_and_split(self, text_splitter: CharacterTextSplitter):
         '''Load documents & split into chunks'''
         raw_docs = self.load()

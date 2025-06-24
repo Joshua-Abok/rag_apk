@@ -4,8 +4,9 @@ from langchain_community.vectorstores import Chroma
 from langchain_core.vectorstores import VectorStoreRetriever
 from langchain_core.embeddings import Embeddings
 from langchain_core.language_models import BaseLanguageModel
+from typeguard import typechecked 
 
-
+@typechecked  # <-- Enclose the function with typeguard
 def create_agent(
     docs,
     llm: BaseLanguageModel,
