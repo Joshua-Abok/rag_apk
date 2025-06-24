@@ -35,7 +35,7 @@ rag_apk/
 * A valid OpenAI API key (set in environment variable `OPENAI_API_KEY`)
 
 ## Installation
-1. Clone the repo and switch to the `dev` branch:
+1. Clone the repo and be sure you're on the `main` branch:
 
    ```bash
    git clone https://github.com/Joshua-Abok/rag_apk
