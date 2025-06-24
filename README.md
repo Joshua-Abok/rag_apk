@@ -25,8 +25,6 @@ rag_apk/
 │   └── agent.py
 ├── data/                         
 │   └── project_1_publications.json
-├── embeddings/                     
-│   └── doc_emb/
 ├── .env
 ├── requirements.txt
 ├── README.md
@@ -40,9 +38,8 @@ rag_apk/
 1. Clone the repo and switch to the `dev` branch:
 
    ```bash
-   git clone https://github.com/<your-org>/<your-repo>.git
-   cd <your-repo>
-   git checkout dev
+   git clone https://github.com/Joshua-Abok/rag_apk
+   cd rag_apk
    ```
 2. Create and activate a virtual environment:
 
@@ -61,6 +58,7 @@ rag_apk/
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
+5. run the application with "streamlit run app/main.py"
 # Usage Examples 
 ![Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg](Screenshot_13-6-2025_153024_cdn.discordapp.com.jpg)
 
