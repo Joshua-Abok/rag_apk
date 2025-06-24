@@ -41,24 +41,47 @@ rag_apk/
    git clone https://github.com/Joshua-Abok/rag_apk
    cd rag_apk
    ```
-2. Create and activate a virtual environment:
-
-   ```bash
-   python3 -m venv .venv
-   source .venv/bin/activate       # Linux / macOS
-   .\.venv\Scripts\activate      # Windows
-   ```
-3. Install dependencies:
+   
+## How to Run Locally
+1. **Install dependencies**  
+   Install required packages (preferably in a virtual environment):
 
    ```bash
    pip install -r requirements.txt
    ```
-4. Add your OpenAI API key to a `.env` file at the project root:
+
+2. **Set up environment variables**  
+   Create a .env file in the project root with your API keys (e.g., for OpenAI).
+
+    ```bash
+   python3 -m venv .venv
+   source .venv/bin/activate       # Linux / macOS
+   .\.venv\Scripts\activate      # Windows
+   ```
+3. **Add your OpenAI API key to a `.env` file at the project root**:
 
    ```env
    OPENAI_API_KEY=your_openai_api_key_here
    ```
-5. run the application with "streamlit run app/main.py"
+4. **Prepare data**  
+   Ensure the file `project_1_publications.json` is present in the `DATA_DIR` directory.
+
+5. **Run the app**  
+   From the project root, start Streamlit:
+
+   ```
+   streamlit run app/main.py
+   ```
+
+6. **Open in browser**  
+   Streamlit will provide a local URL (usually http://localhost:8501). Open it in your browser.
+
+---
+
+You can now interact with the Ready Tensor Publication Explorer!
+
+
+
 # Usage Examples 
 ![Usage Example](image.png)
 
