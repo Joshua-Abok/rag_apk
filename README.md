@@ -76,8 +76,6 @@ rag_apk/
 6. **Open in browser**  
    Streamlit will provide a local URL (usually http://localhost:8501). Open it in your browser.
 
----
-
 You can now interact with the Ready Tensor Publication Explorer!
 
 
