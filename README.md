@@ -18,6 +18,7 @@ This repository provides a simple, extensible Retrieval-Augmented Generation (RA
 rag_apk/
 ├── app/                            
 │   └── main.py
+│   └── path.py 
 ├── loaders/                        
 │   └── document_loader.py
 ├── agents/                      

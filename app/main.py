@@ -7,6 +7,13 @@ from langchain_openai import ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from dotenv import load_dotenv
 
+# THIS HAS BEEN ENCLOSED
+import sys
+from pathlib import Path
+sys.path.append(str(Path(__file__).parent.parent))
+from paths import DATA_DIR, OUTPUTS_DIR, LOADER_DIR, AGENTS_DIR
+
+
 from loaders.document_loader import DocumentLoader, DocumentLoaderException
 from agents.agent import create_agent
 
