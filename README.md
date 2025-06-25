@@ -17,18 +17,19 @@ This repository provides a simple, extensible Retrieval-Augmented Generation (RA
 ```
 rag_apk/
 ├── app/                            
-│   └── main.py
-│   └── path.py 
+│   └── main.py         # Core llm & vector db implementation
+│   └── path.py         # File path configurations
 ├── loaders/                        
-│   └── document_loader.py
+│   └── document_loader.py  # Core DocumentLoader implementation
 ├── agents/                      
-│   └── agent.py
+│   └── agent.py        # ????
 ├── data/                         
-│   └── project_1_publications.json
+│   └── project_1_publications.json    # Sample publications 
 ├── .env.example         # Environment variables template
+├── .gitignore
 ├── requirements.txt     # Python dependencies
 ├── README.md
-├── README.md            # Screenshot_example_usage
+├── usage_example.png    # Screenshot_example_usage
 
 ```
 ## Prerequisites
