@@ -25,9 +25,10 @@ rag_apk/
 │   └── agent.py
 ├── data/                         
 │   └── project_1_publications.json
-├── .env
-├── requirements.txt
+├── .env.example         # Environment variables template
+├── requirements.txt     # Python dependencies
 ├── README.md
+├── README.md            # Screenshot_example_usage
 
 ```
 ## Prerequisites
