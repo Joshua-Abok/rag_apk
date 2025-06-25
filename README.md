@@ -29,6 +29,7 @@ rag_apk/
 ├── .gitignore
 ├── requirements.txt     # Python dependencies
 ├── README.md
+├── LICENSE
 ├── usage_example.png    # Screenshot_example_usage
 
 ```
