@@ -1,6 +1,6 @@
 # RAG Pipeline
 This repository is part of the **Agentic AI Developer Certification program** by the [Ready Tensor](https://www.readytensor.ai)
-and it is linked to the **publication "Agentic AI Developer Certification: Course Project: A RAG-powered AI assistant for a Tensor Publication Explorer"** on [Ready Tensor](https://www.readytensor.ai)
+and it is linked to the **publication "Agentic AI Developer Certification Project: A RAG-based AI assistant for Tensor Publication Explorer"** on [Ready Tensor](https://www.readytensor.ai)
 
 ## Project Description
 This repository provides a simple, extensible Retrieval-Augmented Generation (RAG) pipeline using LangChain and Chroma. It includes a generic `DocumentLoader` class that supports JSON and PDF inputs, handles JQ extraction for JSON, and performs text splitting, embedding, and similarity search.
