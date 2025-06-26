@@ -79,7 +79,7 @@ rag_apk/
 You can now interact with the Ready Tensor Publication Explorer!  
 
 ## Usage Examples 
-![Usage Example](usage_example.png)
+![Usage Example Modified](usage_example_modified.jpeg)
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE.txt) file for details.
