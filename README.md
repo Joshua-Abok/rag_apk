@@ -25,6 +25,7 @@ rag_apk/
 │   └── agent.py             # Agent logic
 ├── data/                         
 │   └── project_1_publications.json  # Sample publications 
+├── outputs/                 # Saved generated responses
 ├── .env.example             # Environment variables template
 ├── .gitignore
 ├── requirements.txt         # Python dependencies

@@ -7,7 +7,7 @@ from langchain_openai import ChatOpenAI
 from langchain.text_splitter import CharacterTextSplitter
 from dotenv import load_dotenv
 
-# THIS HAS BEEN ENCLOSED
+
 import sys
 from pathlib import Path
 sys.path.append(str(Path(__file__).parent.parent))
@@ -28,7 +28,25 @@ embeddings = OpenAIEmbeddings()
 st.set_page_config(page_title="Ready Tensor Publication Explorer", page_icon="🧠")
 #st.title("📚 Ready Tensor RAG Chat")
 st.title("📚 RAG-Based Ready Tensor Publication Explorer")
-st.caption("Ask questions about the Ready Tensor publications.")
+#st.caption("Ask questions about the Ready Tensor publications.")
+
+import json
+
+# Load publications from JSON
+with open(f"{DATA_DIR}/project_1_publications.json", "r", encoding="utf-8") as f:
+    publications = json.load(f)
+
+# Select publication title
+#titles = [pub.get("title", "No Title") for pub in filtered_pubs]
+titles = [pub.get("title", "No Title") for pub in publications]
+selected_title = st.selectbox(" 🔍Select a publication to view details", [""] + titles)
+
+# Show selected publication content
+if selected_title and selected_title in titles:
+    selected_pub = next(pub for pub in publications if pub.get("title", "No Title") == selected_title)
+    st.markdown(f"### {selected_pub.get('title', 'No Title')}")
+    st.markdown(selected_pub.get("publication_description", "No Description"))
+    st.markdown("---")
 
 
 if "chat_history" not in st.session_state:
@@ -70,6 +88,8 @@ if st.session_state.chat_history:
         with st.chat_message("user" if role == "You" else "assistant"):
             st.markdown(msg)
 
+st.caption("Ask questions about the sample dataset Ready Tensor publications.")
+
 # Accept user query
 query = st.chat_input("Ask me anything about the Ready Tensor publications...")
 
@@ -84,5 +104,16 @@ if query and "agent" in st.session_state:
                 answer = st.session_state.agent.run(query)
                 st.markdown(answer)
                 st.session_state.chat_history.append(("AI", answer))
+                
+                # Save response to output/ folder
+                from datetime import datetime
+                import os
+                os.makedirs(OUTPUTS_DIR, exist_ok=True)
+                timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+                filename = f"response_{timestamp}.txt"
+                filepath = os.path.join(OUTPUTS_DIR, filename)
+                with open(filepath, "w", encoding="utf-8") as fn:
+                    fn.write(f"Query: {query}\n\nAnswer: {answer}")
+
             except Exception as e:
                 st.error(f"Agent error: {e}")
